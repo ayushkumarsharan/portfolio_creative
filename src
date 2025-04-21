@@ -1,0 +1,115 @@
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+export default function Portfolio() {
+  return (
+    <main className="min-h-screen bg-white text-gray-900">
+      {/* Landing Section */}
+      <section className="p-10 text-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+        <motion.h1
+          className="text-4xl md:text-6xl font-bold mb-4"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Ayush Kumar Sharan
+        </motion.h1>
+        <motion.p
+          className="text-lg md:text-2xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          Freelance Designer & Tech Explorer | PPTs, Posters & Digital Creativity
+        </motion.p>
+      </section>
+
+      {/* About Me Section */}
+      <section className="p-10 bg-gray-100 text-center">
+        <h2 className="text-3xl font-bold mb-4">About Me</h2>
+        <p className="max-w-3xl mx-auto text-lg">
+          I'm a passionate freelance designer and a tech enthusiast. A Gold Medalist from Amity University with internship experience at Thales, I blend structure and creativity. I love creating visual stories through PPTs, posters, and digital design while keeping a solid grip on cloud basics, networking, and DSA.
+        </p>
+      </section>
+
+      {/* Services Section */}
+      <section className="p-10 grid gap-8 md:grid-cols-3">
+        <Card className="hover:scale-105 transition-transform">
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold mb-2">PowerPoint Presentations</h2>
+            <p>Professional, engaging, and custom-tailored slides.</p>
+          </CardContent>
+        </Card>
+        <Card className="hover:scale-105 transition-transform">
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold mb-2">Posters</h2>
+            <p>Creative and eye-catching designs for all needs.</p>
+          </CardContent>
+        </Card>
+        <Card className="hover:scale-105 transition-transform">
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold mb-2">Digital Designing</h2>
+            <p>Stylish, modern digital art & branding materials.</p>
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Skills Section */}
+      <section className="p-10 grid md:grid-cols-2 gap-8 bg-gray-50">
+        <div>
+          <h3 className="text-2xl font-bold mb-3">Technical Skills</h3>
+          <ul className="list-disc list-inside text-lg">
+            <li>Cloud Computing Basics</li>
+            <li>Networking Concepts</li>
+            <li>Data Structures & Algorithms</li>
+            <li>Basic Software Engineering Principles</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-2xl font-bold mb-3">Creative Skills</h3>
+          <ul className="list-disc list-inside text-lg">
+            <li>PowerPoint Design</li>
+            <li>Poster Creation (Canva, Photoshop)</li>
+            <li>Visual Storytelling</li>
+            <li>Branding & Aesthetics</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Portfolio Gallery Section */}
+      <section className="p-10 text-center">
+        <h2 className="text-3xl font-bold mb-6">My Work</h2>
+        <p className="mb-6 text-lg">Here are some examples of my designs. You can update this section by uploading images to the <code>/public/images</code> folder in your GitHub repository.</p>
+        <div className="grid md:grid-cols-3 gap-6">
+          <img src="/images/work1.jpg" alt="Work 1" className="rounded-xl shadow-md hover:scale-105 transition-transform" />
+          <img src="/images/work2.jpg" alt="Work 2" className="rounded-xl shadow-md hover:scale-105 transition-transform" />
+          <img src="/images/work3.jpg" alt="Work 3" className="rounded-xl shadow-md hover:scale-105 transition-transform" />
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="p-10 text-center bg-indigo-50">
+        <h2 className="text-2xl font-semibold mb-4">Let’s Work Together</h2>
+        <p className="mb-6">Drop me a message for custom designs or collaborations!</p>
+        <form className="max-w-md mx-auto grid gap-4">
+          <input type="text" placeholder="Your Name" className="border rounded p-2 w-full" />
+          <input type="email" placeholder="Your Email" className="border rounded p-2 w-full" />
+          <textarea placeholder="Your Message" rows="4" className="border rounded p-2 w-full"></textarea>
+          <Button className="bg-indigo-600 text-white hover:bg-indigo-700">Send</Button>
+        </form>
+      </section>
+
+      {/* Footer with Socials */}
+      <footer className="p-6 text-center text-gray-500">
+        <p>Connect with me:</p>
+        <div className="flex justify-center space-x-4 mt-2">
+          <a href="https://github.com/" className="hover:underline">GitHub</a>
+          <a href="https://linkedin.com/" className="hover:underline">LinkedIn</a>
+          <a href="mailto:youremail@example.com" className="hover:underline">Email</a>
+        </div>
+        <p className="mt-4">© {new Date().getFullYear()} Ayush Kumar Sharan</p>
+      </footer>
+    </main>
+  );
+}
